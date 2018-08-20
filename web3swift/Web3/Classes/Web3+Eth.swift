@@ -139,11 +139,8 @@ extension web3.Eth {
         let callback = { (res: Result<AnyObject, Web3Error>) -> () in
             switch res {
             case .success(let result):
-                guard let unwrappedResult = result as? [String:String] else {
-                    externalResult = Result.failure(Web3Error.dataError)
-                    break
-                }
-                externalResult = Result<[String: String], Web3Error>(unwrappedResult)
+                let txhash = ["txhash": result] as! [String: String]
+                externalResult = Result<[String: String], Web3Error>(txhash)
             case .failure(let error):
                 externalResult = Result.failure(error)
                 break
