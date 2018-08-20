@@ -4,7 +4,7 @@ def import_pods
   pod 'BigInt', '~> 3.1'
   pod 'CryptoSwift', '~> 0.11'
   pod 'Result', '~> 3.0'
-#  pod 'libsodium', :modular_headers => true
+  pod 'CryptoSwift', :git => 'https://github.com/Kimlic/CryptoSwift', :branch => 'master', :modular_headers => true
   pod 'secp256k1_ios', :git => 'https://github.com/shamatar/secp256k1_ios.git', :modular_headers => true
 end
 
